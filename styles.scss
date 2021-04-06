@@ -1,0 +1,60 @@
+$padding: 0px;
+
+@mixin logo {
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+}
+@mixin animation {
+    animation-name: slide;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.media {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    font-family: "gill sans nova", sans-serif;
+    position: absolute;
+    right: -200px;
+    bottom: 20px;
+    & a:link {
+        color: white;     
+    }
+    &__blog, &__twitter, &__linkedin, &__facebook, &__github {
+        background-color: #e17b77;
+        padding: $padding;
+        &__logo {
+            @include logo();
+            }
+        &:hover { 
+            @include animation();
+        }
+    }
+    &__twitter {
+        background-color: #00aced;
+        }
+    &__linkedin {
+        background-color: #007bb6;
+        }   
+    &__facebook {
+        background-color: #3b5998;
+        }
+    &__github {
+        background-color: #333;
+        }
+    }
+li {
+    margin: 0;
+    padding-bottom: 10px;
+}
+.media a {
+    padding: 15px 40px 10px 10px;
+    float:right;
+}
+@keyframes slide{
+    from{transform: translateX(0px)}
+    to{transform: translateX(-200px)}
+}
